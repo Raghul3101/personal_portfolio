@@ -1,0 +1,215 @@
+body{
+    background-color: #032030;
+    font-family: 'Poppins', sans-serif;
+}
+#header{
+    display: flex;
+    top: 0;
+    position: fixed;
+    justify-content: end;
+    font-family: 'Poppins', sans-serif;
+    background-color: #032030;
+    width: 100%;
+    font-weight: 500;
+    margin-right: 100px;
+    z-index: 5;
+}
+#header .top-bar{
+    display: flex;
+    align-items: center;
+}
+
+#header .top-bar li{
+    list-style: none;
+    color: white;
+    position: relative;
+    margin-right: 30px;
+    cursor: pointer;
+    transition: 0.125s ease;
+}
+#header .top-bar li:hover{
+    color: #1aa3e7;
+}
+#header .active{
+    color: #1aa3e7;
+}
+#header .active::after{
+    color: #1aa3e7;
+}
+#home-content{
+    /* margin-top: 300px; */
+    font-family: 'Poppins', sans-serif;
+    margin-top: 237px;
+    margin-bottom: 250px;
+    margin-left: 70px;
+}
+#home-content .name{
+    font-weight: 600;
+    font-size: 40px;
+    color: white;
+}
+#home-content .qualities{
+    font-weight: 600;
+    font-size: 30px;
+    white-space: nowrap;
+    color: white;
+    display: flex;
+}
+#home-content .qualities-span{
+    font-weight: 600;
+    font-size: 30px;
+    width: 295px;
+    white-space: nowrap;
+    border-right: 2px solid;
+    overflow: hidden;
+    color: #006DA4;
+}
+
+#about{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.2s ease;
+}
+#about:hover{
+    box-shadow: 0 0 10px 4px #1aa3e7;
+}
+#about h1{
+    color: #006494;
+    font-size: 33px;
+    margin-top: 15px;
+}
+#about p{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 35px;
+
+}
+
+#skills{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 100px;
+    transition: 0.2s ease;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#skills h1{
+    color: #006494;
+    font-size: 33px;
+}
+#skills .c, #skills .cpp{
+    width: 125px;
+    height: 140px;
+}
+#skills .java{
+    width: 77px;
+    height: 140px;
+}
+#skills .arduino{
+    width: 187px;
+    height: 140px;
+}
+#skills img{
+    width: 140px;
+    height: 140px;
+    border-radius: 7px;
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+#skills img:hover{
+    transform: translateY(-10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px #1aa3e7;
+}
+#skills .images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+#projects{
+    text-align: center;
+    color: white;
+    margin-top: 110px;
+    font-size: 20px;
+    padding: 10px;
+}
+#projects h1{
+    color: #006494;
+    font-size: 33px;
+}
+#projects .projects-expl{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#projects .prj1{
+    width: 400px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: transform 0.3s ease;
+}
+#projects .prj1:hover{
+    transform: scale(1.05);
+}
+#projects .prj1 p{
+    font-size: 16px;
+}
+
+#contact{
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+    font-size: 20px;
+    padding: 10px;
+}
+#contact h1{
+    color: #006494;
+    font-size: 33px;
+}
+#contact span{
+    width: 35px;
+    height: 35px;
+    border-radius: 40px;
+    background-color: #1aa3e7;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+#contact .phone-line, #contact .email-line{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    
+}
+#contact .first-line{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+#contact .second-line i{
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: 20px;
+    transition: transform 0.2s ease;
+}
+#contact .second-line i:hover{
+    transform: scale(1.2);
+}

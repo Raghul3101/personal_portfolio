@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="https://kit.fontawesome.com/c7c31fbd71.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body id="bdy">
+        <section id="header">
+            <ul class="top-bar">
+                <li class="active" onclick="document.getElementById('bdy').scrollIntoView({behavior: 'smooth'});">Home</li>
+                <li onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'});">About</li>
+                <li onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'});">Skills</li>
+                <li onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'});">Projects</li>
+                <li onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Contact</li>
+            </ul>
+        </section>
+
+        <section id="home-content">
+            <p class="name">Hello, I'm Raghul Krishna</p>
+            <p class="qualities"><span>I'm a&nbsp;</span><span class="qualities-span"></span></p>
+        </section>
+       
+        <section id="about">
+            <h1>About Me</h1>
+            <p>
+                I'm Raghul Krishna, a Second year student at VIT University Chennai pursuing a B.Tech in Computer Science 
+                with Specialization in AI and Robotics. I have been passionate about Robotics since my schooling, and I've 
+                undertaken several projects in this field, further deepening my interest and expertise. I love exploring 
+                new fields and learning new things which would improve and increase my skill set. I've took part in many 
+                hackathons and competitions, won in a few, but have a lot of experience in competitive coding. I'd love to 
+                hear new ideas from people and work on it.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h1>Skills</h1>
+            <div class="images">
+                <img src="html.png">
+                <img src="CSS.png">
+                <img src="js.png">
+                <img src="python.png">
+                <img class="c" src="c.png">
+                <img class="cpp" src="c++.png">
+                <img class="java" src="java.png">
+                <img src="django.png">
+                <img src="react.png">
+                <img src="mysql.png">
+                <img src="postgresql.png">
+                <img class="arduino" src="arduino.png">
+            </div>
+        </section>
+
+        <section id="projects">
+            <h1>Projects</h1>
+            <div class="projects-expl">
+                <div class="prj1">
+                    <h3>Self Balancing Robot</h3>
+                    <p>The Self-Balancing robot utilizes an Arduino Uno microcontroller, an MPU6050 accelerometer and gyroscope module, and various complementary components. This innovative project aims to achieve dynamic stability by constantly monitoring the robot's tilt angles using data from the MPU6050 sensor. The Arduino Uno processes this information and adjusts the motor speeds accordingly, ensuring the robot maintains an upright position..</p>
+                </div>
+                <div class="prj1">
+                    <h3>Gesture Controlled Robot</h3>
+                    <p>
+                        The gesture-controlled robot, crafted with Arduino Uno, MPU6050, and a set of receiver and transmitter modules, seamlessly combines sensor technology with robotics. Harnessing the power of motion sensing, this innovation allows users to intuitively control the robot's movements through simple hand gestures, offering an immersive and interactive robotic experience..</p>
+                </div>
+                <div class="prj1">
+                    <h3>E-Commerce Website</h3>
+                    <p>Using the Django framework, the footwear E-Commerce website seamlessly integrates Python, HTML, CSS, and JavaScript. With a dynamic interface and secure PostgreSQL database, the platform ensures a smooth and personalized shopping experience, offering a diverse range of stylish footwear accessible to customers with just a click.</p>
+                </div>
+                <div class="prj1">
+                    <h3>Parking Management System</h3>
+                    <p>
+                        The Python-based Parking Management System, built with Tkinter and other graphical elements, revolutionizes vehicle management. Implementing the FASTag technology, it efficiently records in-time, out-time, and payments, streamlining parking operations. The intuitive interface enhances user experience, providing a seamless and automated solution for efficient and secure parking management.</p>
+                </div>
+            </div>
+        </section>
+            
+        <section id="contact">
+            <h1>Contact</h1>
+            <div class="first-line">
+                <div class="phone-line">
+                    <span><i class="fa-solid fa-phone"></i></span>
+                    <p>+91 7010822061</p>
+                </div>
+                <div class="email-line">
+                    <span><i class="fa-solid fa-envelope"></i></span>
+                    <p>rrkraghulkrishna2005@gmail.com</p>
+                </div>
+            </div>
+            <div class="second-line">
+                <i class="fa-brands fa-instagram" onclick="window.location.href='https://www.instagram.com/raghul_3101/'"></i>
+                <i class="fa-brands fa-linkedin" onclick="window.location.href='https://www.linkedin.com/in/raghul-krishna-887597282/'"></i>
+                <i class="fa-brands fa-github" onclick="window.location.href='https://github.com/Raghul3101'"></i>
+            </div>
+        </section>
+        <script>
+            const text = document.querySelector(".qualities-span");
+            const l = ["Undergrad Student", "Web Developer", "Programmer"];
+            var i = 0;
+            function loop(){
+                text.style.display="block";
+                text.textContent = l[i];
+                i = (i+1)%3;
+                setWidth();
+                text.style.animation="typing 1s steps(17), cursor 0.4s step-end infinite alternate, backspace 1s steps(17) 3s forwards";
+                setTimeout(() => {
+                    text.style.animation = 'none';
+                    text.style.display="none";
+                    setTimeout(() => {
+                        text.style.animation = '';
+                        loop();
+                    }, 100);
+                }, 4000);
+            }
+            function setWidth() {
+                if(text.textContent == "Undergrad Student"){
+                    text.style.width = "295px";
+                }
+                else if (text.textContent == "Programmer"){
+                    text.style.width = "200px";
+                }
+                else if (text.textContent == "Web Developer"){
+                    text.style.width = "235px";
+                }
+            }
+            loop();
+        </script>
+        <style>
+            @keyframes cursor {
+                50% {
+                    border-color: transparent;
+                }
+            }
+            @keyframes typing{
+                from{
+                    width: 0;
+                }
+            }
+            @keyframes backspace {
+                to {
+                  width: 0;
+                }
+            }
+        </style>
+    </body>
+</html>
