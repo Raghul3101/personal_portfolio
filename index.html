@@ -14,11 +14,11 @@
     <body id="bdy">
         <section id="header">
             <ul class="top-bar">
-                <li class="active" onclick="document.getElementById('bdy').scrollIntoView({behavior: 'smooth'});">Home</li>
-                <li onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'});">About</li>
-                <li onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'});">Skills</li>
-                <li onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'});">Projects</li>
-                <li onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Contact</li>
+                <li class="active" onclick="scrollToSection('home-content');">Home</li>
+                <li onclick="scrollToSection('about');">About</li>
+                <li onclick="scrollToSection('skills');">Skills</li>
+                <li onclick="scrollToSection('projects');">Projects</li>
+                <li onclick="scrollToSection('contact');">Contact</li>
             </ul>
         </section>
 
@@ -48,12 +48,12 @@
                 <img src="python.png">
                 <img class="c" src="c.png">
                 <img class="cpp" src="c++.png">
-                <img class="java" src="java.png">
+                <img src="java.png">
                 <img src="django.png">
                 <img src="react.png">
                 <img src="mysql.png">
                 <img src="postgresql.png">
-                <img class="arduino" src="arduino.png">
+                <img src="arduino.png">
             </div>
         </section>
 
@@ -94,9 +94,9 @@
                 </div>
             </div>
             <div class="second-line">
-                <i class="fa-brands fa-instagram" onclick="window.location.href='https://www.instagram.com/raghul_3101/'"></i>
-                <i class="fa-brands fa-linkedin" onclick="window.location.href='https://www.linkedin.com/in/raghul-krishna-887597282/'"></i>
-                <i class="fa-brands fa-github" onclick="window.location.href='https://github.com/Raghul3101'"></i>
+                <i class="fa-brands fa-instagram" onclick="window.open('https://www.instagram.com/raghul_3101/', '_blank')"></i>
+                <i class="fa-brands fa-linkedin" onclick="window.open('https://www.linkedin.com/in/raghul-krishna-887597282/', '_blank')"></i>
+                <i class="fa-brands fa-github" onclick="window.open('https://github.com/Raghul3101', '_blank')"></i>
             </div>
         </section>
         <script>
@@ -130,6 +130,41 @@
                 }
             }
             loop();
+
+            function scrollToSection(sectionId) {
+                var section = document.getElementById(sectionId);
+                if (section) {
+                    var topBarHeight = document.querySelector('#header').offsetHeight;
+                    if (sectionId === 'home-content') {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        var sectionTop = section.offsetTop - topBarHeight - 10;
+            
+                        window.scrollTo({
+                            top: sectionTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', function () {
+                var topBar = document.querySelector('.top-bar');
+                var sections = document.querySelectorAll('section');
+    
+                sections.forEach(function (section, index) {
+                    var top = section.offsetTop - topBar.offsetHeight + parseInt(getComputedStyle(section).marginTop)+100;
+                    var bottom = top + section.offsetHeight;
+                    if (window.scrollY >= top && window.scrollY < bottom) {
+                        var topBarItem = topBar.children[index];
+                        topBar.querySelector('.active').classList.remove('active');
+                        topBarItem.classList.add('active');
+                    }
+                });
+            });
         </script>
         <style>
             @keyframes cursor {

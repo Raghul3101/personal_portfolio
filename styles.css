@@ -30,14 +30,10 @@ body{
 #header .top-bar li:hover{
     color: #1aa3e7;
 }
-#header .active{
-    color: #1aa3e7;
-}
-#header .active::after{
+#header .top-bar li.active{
     color: #1aa3e7;
 }
 #home-content{
-    /* margin-top: 300px; */
     font-family: 'Poppins', sans-serif;
     margin-top: 237px;
     margin-bottom: 250px;
@@ -136,6 +132,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     gap: 60px;
+    justify-content: space-between;
 }
 
 #projects{
@@ -182,6 +179,7 @@ body{
     font-size: 33px;
 }
 #contact span{
+    display: grid;
     width: 35px;
     height: 35px;
     border-radius: 40px;
@@ -196,7 +194,8 @@ body{
     text-align: center;
     justify-content: center;
     align-items: center;
-    margin-left: 100px;
+    margin-left: auto;
+    margin-right: auto;
     
 }
 #contact .first-line{
@@ -212,4 +211,51 @@ body{
 }
 #contact .second-line i:hover{
     transform: scale(1.2);
+}
+
+@media (min-width:270px) and (max-width: 474px){
+    #header{
+        text-align: center;
+        justify-content: center;
+    }
+    #header .top-bar{
+        padding-left: 0;
+        gap: 20px;
+    }
+    #header .top-bar li{
+        margin-right: 0;
+    }
+    #home-content{
+        margin-left: 10px;
+    }
+    #home-content .name{
+        font-size: 47px;
+    }
+    #home-content .qualities{
+        font-size: 30px;
+    }
+    #home-content .qualities-span{
+        font-size: 30px;
+    }
+    #about{
+        width: auto;
+    }
+    #about p{
+        width: auto;
+        font-size: 15px;
+    }
+    #contact{
+        font-size: 15px;
+    }
+    #contact .first-line{
+        display: flex;
+        flex-direction: column;
+    }
+    #contact .second-line i{
+        font-size: 27px;
+    }
+    #contact .phone-line, #contact .email-line{
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
